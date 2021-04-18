@@ -21,7 +21,7 @@ def call (Map config=[:]){
         //    echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
          //  config.each{println(it)}
           
-     cofig.each{ k, v -> println "${k}:${v}" }
+     config.each{ k, v -> println "${k}:${v}" }
         //  config.each{entry -> println "$entry.key: $entry.value"}
      //     def path=${config.url}
         //    println(path + "dddddddddddddddddddd")
