@@ -21,12 +21,12 @@ def call (Map config=[:]){
         //    echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
          //  config.each{println(it)}
           
-     config.each{ k, v -> println "${k}:${v}" }
+        config.each{ k, v -> println "${k}:${v}" }
         //  config.each{entry -> println "$entry.key: $entry.value"}
-     //     def path=${config.url}
+          def uu=config.url
         //    println(path + "dddddddddddddddddddd")
             response = sh (
-                    script: "curl --location --request POST ${path} \
+                    script: "curl --location --request POST ${uu} \
 --header 'Content-Type: application/xml' \
            -d  @${sourceFile} ",
                     returnStdout: true
