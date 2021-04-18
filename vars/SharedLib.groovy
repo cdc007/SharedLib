@@ -20,7 +20,7 @@ def call (config1){
 
         //    echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 
-            path=config.url
+            path=config1.url
             println(path + "dddddddddddddddddddd")
             response = sh (
                     script: "curl --location --request POST ${path} \
