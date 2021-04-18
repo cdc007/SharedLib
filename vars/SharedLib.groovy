@@ -26,8 +26,8 @@ def call (Map config){
           def uu=config.url
         //    println(path + "dddddddddddddddddddd")
             response = sh (
-                    script: "curl --location --request POST '${uu}' \
---header 'Content-Type: application/xml' \
+                    script: "curl --location --request POST https://api.beta.shipwire.com/exec/InventoryServices.ph \
+           --header 'Content-Type: application/xml' \
            -d  @${sourceFile} ",
                     returnStdout: true
             ).trim()
@@ -48,7 +48,5 @@ def call (Map config){
 
 
 }
-
-
 
 
