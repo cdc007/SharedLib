@@ -1,9 +1,9 @@
-@groovy.transform.Field def config
+//@groovy.transform.Field def config
 
-def call (config){
+def call (Map config=[:]){
   //  
   //  def config = [:]
-    this.config=config
+//    this.config=config
     node{
         stage('prepare'){
             deleteDir()
