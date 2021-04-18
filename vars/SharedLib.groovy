@@ -1,9 +1,9 @@
-
+@groovy.transform.Field def config
 
 def call (config){
   //  
   //  def config = [:]
-  //  this.config=config1
+    this.config=config
     node{
         stage('prepare'){
             deleteDir()
