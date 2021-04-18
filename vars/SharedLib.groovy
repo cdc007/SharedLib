@@ -23,7 +23,7 @@ def call (Map config){
           
         config.each{ k, v -> println "${k}:${v}" }
         //  config.each{entry -> println "$entry.key: $entry.value"}
-       //   def uu=config.url
+          def uu=config.url
         //    println(path + "dddddddddddddddddddd")
             response = sh (
                     script: "curl --location --request POST ${uu} \
