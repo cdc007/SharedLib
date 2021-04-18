@@ -32,7 +32,17 @@ def call (Map config){
                     returnStdout: true
             ).trim()
             println(response)
+          
+          
+          def request = libraryResource '/templates/test.xml'
+          println request
+          
+          writeFile file : "test1.xml",text:request
         }
+      
+      
+      
+      
         stage('Audit tools') {
 
             sh '''
