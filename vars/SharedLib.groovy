@@ -1,7 +1,9 @@
 
 
-def call (Map config){
-    this.config=config
+def call (config1){
+  //  
+    def config = [:]
+    this.config=config1
     node{
         stage('prepare'){
             deleteDir()
