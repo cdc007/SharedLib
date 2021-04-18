@@ -1,9 +1,9 @@
 
 
-def call (config1){
+def call (config){
   //  
-    def config = [:]
-    this.config=config1
+  //  def config = [:]
+  //  this.config=config1
     node{
         stage('prepare'){
             deleteDir()
@@ -20,7 +20,7 @@ def call (config1){
 
         //    echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 
-            path=config1.url
+            def path=config.url
             println(path + "dddddddddddddddddddd")
             response = sh (
                     script: "curl --location --request POST ${path} \
