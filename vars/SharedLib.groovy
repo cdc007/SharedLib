@@ -21,7 +21,7 @@ def call (config1){
         //    echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 
             path=config.url
-
+            println(path + "dddddddddddddddddddd")
             response = sh (
                     script: "curl --location --request POST ${path} \
 --header 'Content-Type: application/xml' \
