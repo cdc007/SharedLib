@@ -1,13 +1,49 @@
 
-//@groovy.transform.Field def workspace
-//   @groovy.transform.Field def path
-//  @groovy.transform.Field def file
 
-@Library('commonLib@master') _
+def call (Map config){
+    this.config=config
+    node{
+        stage('prepare'){
+            deleteDir()
+            checkout scm
+            println sh(script: 'pwd', returnStdout: true).trim()
+            println sh(script: 'ls -lrt', returnStdout: true).trim()
 
-timestamps {
+            workspace = env.WORKSPACE
+            sh "chmod 755 ${workspace}"
+            echo "Current workspace is ${env.WORKSPACE}"
+        //    path= "${workspace}/RestfulXML"
+            sourceFile= "${workspace}/RestfulXML/test.xml"
+       //     final String content = readFile("${path}/test.xml")
 
-       SharedLib{
-           url:'https://api.beta.shipwire.com/exec/InventoryServices.ph'
-       }
+        //    echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+
+            path=config.url
+
+            response = sh (
+                    script: "curl --location --request POST ${path} \
+--header 'Content-Type: application/xml' \
+           -d  @${sourceFile} ",
+                    returnStdout: true
+            ).trim()
+            println(response)
+        }
+        stage('Audit tools') {
+
+            sh '''
+                           git version
+                           
+           '''
+        }
+
+
+    }
+
+
+
+
 }
+
+
+
+
