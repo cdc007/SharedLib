@@ -19,10 +19,12 @@ def call (config){
        //     final String content = readFile("${path}/test.xml")
 
         //    echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-           config.each{println(it)}
+         //  config.each{println(it)}
+          
+     cofig.each{ k, v -> println "${k}:${v}" }
         //  config.each{entry -> println "$entry.key: $entry.value"}
      //     def path=${config.url}
-            println(path + "dddddddddddddddddddd")
+        //    println(path + "dddddddddddddddddddd")
             response = sh (
                     script: "curl --location --request POST ${path} \
 --header 'Content-Type: application/xml' \
