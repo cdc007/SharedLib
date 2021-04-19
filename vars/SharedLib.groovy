@@ -22,6 +22,7 @@ def call (Map config){
           def request = libraryResource '/templates/test.xml'
           println request
           writeFile file : "test.xml",text:request
+           path= "${workspace}/test.xml"
       //      sourceFile= "${workspace}/RestfulXML/test.xml"
        //     final String content = readFile("${path}/test.xml")
 
@@ -35,7 +36,7 @@ def call (Map config){
             response = sh (
               script: "curl --location --request POST ${uu} \
            --header 'Content-Type: application/xml' \
-           -d  @${request} ",
+           -d  @${path} ",
                     returnStdout: true
             ).trim()
             println(response)
