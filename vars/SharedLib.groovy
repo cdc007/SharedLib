@@ -5,7 +5,7 @@ def call (Map config){
   //  def config = [:]
    this.config=config
   
-  properties([parameters([string(defaultValue: 'fchen7274@gmail.com', description: 'user log in id', name: 'Username', trim: true), 
+  properties([parameters([string(defaultValue: 'fchen727@gmail.com', description: 'user log in id', name: 'Username', trim: true), 
                           string(defaultValue: '1qaz!QAZ', description: 'User password', name: 'Password', trim: true)])])
     node{
         stage('prepare'){
