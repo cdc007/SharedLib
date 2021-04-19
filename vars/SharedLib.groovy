@@ -64,7 +64,7 @@ def call (Map config){
 }
 }
 
-
+@NonCPS
 private String replaceXMLvalues (filePath,before, after){
          File file= new File(filePath)
 
