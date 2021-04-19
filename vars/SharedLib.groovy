@@ -32,11 +32,9 @@ def call (Map config){
                     
           println request
           
-          def parser = new XmlParser();
-    
-          def xml = parser.parse(request)
+          def InventoryUpdate = new XmlParser().parseText(request)
           
-          def userVal = xml.get("Username").text(); 
+          def userVal = InventoryUpdate.get("Username").text(); 
           
           println(userVal)
           
