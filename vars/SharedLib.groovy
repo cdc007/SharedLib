@@ -33,6 +33,7 @@ def call (Map config){
           println request
           
           writeFile file:"test.xml", text:request
+            sh "chmod 755 test.xml"
           
           def InventoryUpdate = new XmlParser().parse("text.xml")
           
