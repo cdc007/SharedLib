@@ -29,11 +29,18 @@ def call (Map config){
           
           
           def request = libraryResource '/templates/test.xml'
-        
-          def xml = new XmlSlurper().parse(request)
-          def cars = xml.depthFirst().findAll { it.name() == 'car' }
-          
+                    
           println request
+          def xml = new XmlSlurper().parse(request)
+          
+          def userVal = xml.attributes().get("Username"); 
+          
+          println(userVal)
+          
+          xml.attributes().put("Username","123");
+          
+          println(xml)
+
           writeFile file : "test.xml",text:request
           path= "${workspace}/test.xml"
   
