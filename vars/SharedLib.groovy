@@ -35,7 +35,9 @@ def call (Map config){
           writeFile file:"test.xml", text:request
             sh "chmod 755 test.xml"
           
-          def InventoryUpdate = new XmlParser().parse("text.xml")
+          sourceFile= "${workspace}/test.xml"
+          
+          def InventoryUpdate = new XmlParser().parse(sourceFile)
           
           def userVal = InventoryUpdate.get("Username").text(); 
           
