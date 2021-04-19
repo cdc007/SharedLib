@@ -36,13 +36,11 @@ def call (Map config){
     
           def xml = parser.parse(request)
           
-          def userVal = xml.attributes().get("Username"); 
+          def userVal = xml.get("Username").text(); 
           
           println(userVal)
           
-          xml.attributes().put("Username","123");
-          
-          println(xml)
+
 
           writeFile file : "test.xml",text:request
           path= "${workspace}/test.xml"
