@@ -32,7 +32,7 @@ def call (Map config){
                     
           println request
           
-          WriteFile file:"test.xml" text:request
+          writeFile file:"test.xml" text:request
           
           def InventoryUpdate = new XmlParser().parse("text.xml")
           
@@ -58,3 +58,10 @@ def call (Map config){
         }
 }
 
+private String replaceXMLvalues (xmlContent,before, after){
+ // File file= new File(filePath)
+  
+  def newContent = xmlContent.replaceAll(before, after)
+  
+ // file.newWriter().withWriter {it -> it << newContent}
+}
