@@ -68,7 +68,7 @@ def call (Map config){
 private String replaceXMLvalues (filePath,before, after){
          File file= new File(filePath)
 
-        def newContent = xmlContent.replaceAll(before, after)
+        def newContent = file.text.replaceAll(before, after)
 
         file.newWriter().withWriter {it -> it << newContent}
     }
