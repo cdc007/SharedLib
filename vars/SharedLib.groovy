@@ -32,7 +32,7 @@ def call (Map config){
                     
           println request
           
-          writeFile file:"test.xml" text:request
+          writeFile file:"test.xml", text:request
           
           def InventoryUpdate = new XmlParser().parse("text.xml")
           
