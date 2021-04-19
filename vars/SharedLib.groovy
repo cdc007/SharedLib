@@ -40,12 +40,14 @@ def call (Map config){
           def InventoryUpdate = new XmlParser().parse(sourceFile)
           
           def userVal = InventoryUpdate.get("Username").text(); 
+           def userVal2 = InventoryUpdate.get("Password").text(); 
           
-       //   replaceXMLvalues()
+       //   
           
           println(userVal)
    
-          
+          replaceXMLvalues(sourceFile,userVal, "${Username}")   
+          replaceXMLvalues(sourceFile,userVal, "${Password}")
          
 
          config.each{ k, v -> println "${k}:${v}" }
@@ -61,3 +63,12 @@ def call (Map config){
         }
 }
 }
+
+
+private String replaceXMLvalues (filePath,before, after){
+         File file= new File(filePath)
+
+        def newContent = xmlContent.replaceAll(before, after)
+
+        file.newWriter().withWriter {it -> it << newContent}
+    }
