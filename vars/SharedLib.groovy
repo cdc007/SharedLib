@@ -71,5 +71,5 @@ private  replaceXMLvalues (filePath,before, after){
 
         def newContent = file.text.replaceAll(before, after)
 
-        file.newWriter().withWriter {it -> it << newContent}
+        file.BufferedWriter().withWriter {it -> it << newContent}
     }
