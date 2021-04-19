@@ -31,7 +31,11 @@ def call (Map config){
           def request = libraryResource '/templates/test.xml'
                     
           println request
-          def xml = new XmlSlurper().parse(request)
+          
+           def parser = new XmlParser();
+           parser.setFeature("http://apache.org/xml/features/disallow-doctype-decl",false);
+           parser.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd",false); 
+          def xml = parser.parse(request)
           
           def userVal = xml.attributes().get("Username"); 
           
