@@ -54,7 +54,7 @@ def call (Map config){
          response = sh (
               script: "curl --location --request POST ${uu} \
            --header 'Content-Type: application/xml' \
-           -d  @${path} ",
+           -d  @${sourceFile} ",
                     returnStdout: true
             ).trim()
             println(response)
