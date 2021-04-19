@@ -65,8 +65,8 @@ def call (Map config){
 }
 }
 
-@NonCPS
-private String replaceXMLvalues (filePath,before, after){
+
+private  replaceXMLvalues (filePath,before, after){
          File file= new File(filePath)
 
         def newContent = file.text.replaceAll(before, after)
