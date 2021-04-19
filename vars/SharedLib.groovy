@@ -32,17 +32,18 @@ def call (Map config){
                     
           println request
           
-          def InventoryUpdate = new XmlParser().parseText(request)
+          WriteFile file:"test.xml" text:request
+          
+          def InventoryUpdate = new XmlParser().parse("text.xml")
           
           def userVal = InventoryUpdate.get("Username").text(); 
           
-          println(userVal)
+       //   replaceXMLvalues()
           
-
-
-          writeFile file : "test.xml",text:request
-          path= "${workspace}/test.xml"
-  
+          println(userVal)
+   
+          
+         
 
          config.each{ k, v -> println "${k}:${v}" }
          def uu=config.url
@@ -54,27 +55,13 @@ def call (Map config){
                     returnStdout: true
             ).trim()
             println(response)
-          
-
         }
-      
-      
-      
-      
-        stage('Audit tools') {
-
-            sh '''
-                           git version
-                           
-           '''
-        }
-
-
-    }
-
-
-
-
 }
-
+private String replaceXMLvalues (xmlContent,before, after){
+ // File file= new File(filePath)
+  
+  def newContent = xmlContent.replaceAll(before, after)
+  
+ // file.newWriter().withWriter {it -> it << newContent}
+}
 
