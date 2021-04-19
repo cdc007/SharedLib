@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE InventoryUpdate SYSTEM "https://www.shipwire.com/exec/download/InventoryUpdate.dtd">
 <InventoryUpdate>
 <Username>#user</Username>
 <Password>#pwd</Password>
