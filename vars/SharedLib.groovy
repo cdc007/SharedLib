@@ -41,7 +41,7 @@ def call (Map config){
           
           println(InventoryUpdate)
           
-          @NonCPS
+        //  @NonCPS
           params.each{ key, value ->
             InventoryUpdate.'**'.findAll{ if (it.name() ==key) it.replaceBody value}
           }
