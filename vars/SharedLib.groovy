@@ -5,8 +5,11 @@ def call (Map config){
   //  def config = [:]
    this.config=config
   
-  properties([parameters([string(defaultValue: 'fchen7274@gmail.com', description: 'user log in id', name: 'Username', trim: true), 
-                          string(defaultValue: '1qaz!QAZ', description: 'User password', name: 'Password', trim: true)])])
+//  properties([parameters([string(defaultValue: 'fchen7274@gmail.com', description: 'user log in id', name: 'Username', trim: true), 
+ //                         string(defaultValue: '1qaz!QAZ', description: 'User password', name: 'Password', trim: true)])])
+  params=[Username : "${Username}",  Password : "${Password}"]
+  
+  println(params)
   
     node{
         stage('prepare'){
@@ -31,25 +34,17 @@ def call (Map config){
           def request = libraryResource '/templates/test.xml'
                     
           println request
+         
+          def InventoryUpdate = new XmlParser().parseText(request)
+          
+   
           
           writeFile file:"test.xml", text:request
             sh "chmod 755 test.xml"
           
           sourceFile= "${workspace}/test.xml"
           
-          def InventoryUpdate = new XmlParser().parse(sourceFile)
-          
-          def userVal = InventoryUpdate.get("Username").text(); 
-           def userVal2 = InventoryUpdate.get("Password").text(); 
-          
-       //   
-          
-          println(userVal)
-             println(userVal2)
-   
-          replaceXMLvalues(sourceFile,userVal, "${Username}")   
-          replaceXMLvalues(sourceFile,userVal, "${Password}")
-         
+        
 
          config.each{ k, v -> println "${k}:${v}" }
          def uu=config.url
@@ -66,10 +61,13 @@ def call (Map config){
 }
 
 
-private  replaceXMLvalues (filePath,before, after){
-         File file= new File(filePath)
+private  replaceXMLvalues (xmlContent,before, after){
+ 
 
-        def newContent = file.text.replaceAll(before, after)
-
-        file.BufferedWriter().withWriter {it -> it << newContent}
+        def newContent = file.replaceAll(before, after)
     }
+
+
+private Map getAll(xmlcontent){
+  
+}
