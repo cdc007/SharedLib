@@ -7,7 +7,7 @@ def call (Map config){
   
 //  properties([parameters([string(defaultValue: 'fchen7274@gmail.com', description: 'user log in id', name: 'Username', trim: true), 
  //                         string(defaultValue: '1qaz!QAZ', description: 'User password', name: 'Password', trim: true)])])
-  params=[Username : "${Username}",  Password : "${Password}"]
+ def params=[Username : "${Username}",  Password : "${Password}"]
   
   println(params)
   
@@ -36,8 +36,11 @@ def call (Map config){
           println request
          
           def InventoryUpdate = new XmlParser().parseText(request)
-          
+          params.each{ key, value ->
+            InventoryUpdate.'**'.findAll{ if (it.name() ==key) it.replacebody value}
+          }
    
+          
           
           writeFile file:"test.xml", text:request
             sh "chmod 755 test.xml"
