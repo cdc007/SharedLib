@@ -39,7 +39,7 @@ def call (Map config){
           
             println(params)
           params.each{ key, value ->
-            InventoryUpdate.'**'.findAll{ if (it.name() ==key) it.replacebody value}
+            InventoryUpdate.'**'.findAll{ if (it.name() ==key) it.replaceBody value}
           }
    
           
