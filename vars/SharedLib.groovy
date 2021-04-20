@@ -15,8 +15,8 @@ def call (Map config){
         stage('prepare'){
             deleteDir()
             checkout scm
-            println sh(script: 'pwd', returnStdout: true).trim()
-            println sh(script: 'ls -lrt', returnStdout: true).trim()
+        //    println sh(script: 'pwd', returnStdout: true).trim()
+       //     println sh(script: 'ls -lrt', returnStdout: true).trim()
 
       //      workspace = env.WORKSPACE
         //    sh "chmod 755 ${workspace}"
@@ -49,7 +49,7 @@ def call (Map config){
           
         
 
-         config.each{ k, v -> println "${k}:${v}" }
+     //    config.each{ k, v -> println "${k}:${v}" }
          def uu=config.url
 
          response = sh (
@@ -71,6 +71,3 @@ private  replaceXMLvalues (xmlContent,before, after){
     }
 
 
-private Map getAll(xmlcontent){
-  
-}
