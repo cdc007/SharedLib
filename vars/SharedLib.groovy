@@ -9,7 +9,7 @@ def call (Map config){
  //                         string(defaultValue: '1qaz!QAZ', description: 'User password', name: 'Password', trim: true)])])
  def params=[Username : "${Username}",  Password : "${Password}"]
   
-  println(params)
+
   
     node{
         stage('prepare'){
@@ -36,6 +36,8 @@ def call (Map config){
           println request
          
           def InventoryUpdate = new XmlParser().parseText(request)
+          
+            println(params)
           params.each{ key, value ->
             InventoryUpdate.'**'.findAll{ if (it.name() ==key) it.replacebody value}
           }
