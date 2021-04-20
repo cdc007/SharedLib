@@ -35,9 +35,10 @@ def call (Map config){
                     
           println request
          
-          def InventoryUpdate = new XmlParser().parseText(request)
+          def InventoryUpdate = new XmlSlurper().parseText(request)
           
             println(params)
+          println(InventoryUpdate)
           params.each{ key, value ->
             InventoryUpdate.'**'.findAll{ if (it.name() ==key) it.replaceBody value}
           }
