@@ -84,7 +84,9 @@ String extractFromXml(String request, Map params) {
            println(InventoryUpdate)
 
 XmlUtil xmlUtil = new XmlUtil()
-  println "String:\n${xmlString}"
-return  xmlString = xmlUtil.serialize(InventoryUpdate)
+
+xmlString = xmlUtil.serialize(InventoryUpdate)
+     println "String:\n${xmlString}"
+   return xmlString
 
 }
