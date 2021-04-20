@@ -1,3 +1,6 @@
+   
+  import groovy.xml.XmlUtil
+
 @groovy.transform.Field def config
 
 def call (Map config){
@@ -35,20 +38,9 @@ def call (Map config){
                     
           println request
          
-          def InventoryUpdate = new XmlSlurper().parseText(request)
-          
-            println(params)
-          
-          println(InventoryUpdate)
-          
-        //  @NonCPS
-          params.each{ key, value ->
-            InventoryUpdate.'**'.findAll{ if (it.name() ==key) it.replaceBody value}
-          }
-   
-          
-          
-          writeFile file:"test.xml", text:request
+          request1 =extractFromXml(request, params)
+       
+          writeFile file:"test.xml", text:request1
             sh "chmod 755 test.xml"
           
           sourceFile= "${workspace}/test.xml"
@@ -77,3 +69,22 @@ private  replaceXMLvalues (xmlContent,before, after){
     }
 
 
+@NonCPS
+String extractFromXml(String request, Map params) {
+     def InventoryUpdate = new XmlSlurper().parseText(request)
+          
+            println(params)
+          
+          println(InventoryUpdate)
+         
+          params.each{ key, value ->
+            InventoryUpdate.'**'.findAll{ if (it.name() ==key) it.replaceBody value}
+          }
+           
+           println(InventoryUpdate)
+
+XmlUtil xmlUtil = new XmlUtil()
+  println "String:\n${xmlString}"
+return  xmlString = xmlUtil.serialize(InventoryUpdate)
+
+}
