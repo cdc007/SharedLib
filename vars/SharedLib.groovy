@@ -38,7 +38,10 @@ def call (Map config){
           def InventoryUpdate = new XmlSlurper().parseText(request)
           
             println(params)
+          
           println(InventoryUpdate)
+          
+          @NonCPS
           params.each{ key, value ->
             InventoryUpdate.'**'.findAll{ if (it.name() ==key) it.replaceBody value}
           }
