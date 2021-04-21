@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE InventoryUpdate SYSTEM "https://www.shipwire.com/exec/download/InventoryUpdate.dtd">
 <InventoryUpdate>
@@ -5,3 +6,11 @@
 <Password>1qaz!QAZ</Password>
 <Server>Test</Server>
 </InventoryUpdate>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<InventoryUpdate>
+<Username>#user</Username>
+<Password>#pwd</Password>
+<Server>Test</Server>
+</InventoryUpdate>
+>>>>>>> a556ebdde576bcce8b2f46f015ee17de72e91c3b
