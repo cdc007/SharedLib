@@ -12,7 +12,9 @@ def call (Map config){
  //                         string(defaultValue: '1qaz!QAZ', description: 'User password', name: 'Password', trim: true)])])
  def params=[Username : "${Username}",  Password : "${Password}"]
   
+def now = LocalDateTime.now()
 
+println now.format(DateTimeFormatter.ofPattern("yyyyMMddHHmm"))
   
     node{
         stage('prepare'){
