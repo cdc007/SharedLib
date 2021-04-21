@@ -15,6 +15,8 @@ def call (Map config){
 def now = LocalDateTime.now()
 
 println now.format(DateTimeFormatter.ofPattern("yyyyMMddHHmm"))
+
+   println(new Date().getTime())
   
     node{
         stage('prepare'){
