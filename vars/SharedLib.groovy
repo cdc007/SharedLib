@@ -71,22 +71,23 @@ private  replaceXMLvalues (xmlContent,before, after){
 
 @NonCPS
 String extractFromXml(String request, Map params) {
-     def InventoryUpdate = new XmlSlurper().parseText(request)
+     def test = new XmlSlurper().parseText(request)
           
             println(params)
           
-          println(InventoryUpdate)
+          println(test)
          
           params.each{ key, value ->
-            InventoryUpdate.'**'.findAll{ if (it.name() ==key) it.replaceBody value}
+            test.'**'.findAll{ if (it.name() ==key) it.replaceBody value}
           }
            
-           println(InventoryUpdate)
+           println(test)
 
 XmlUtil xmlUtil = new XmlUtil()
 
-xmlString = xmlUtil.serialize(InventoryUpdate)
+xmlString = xmlUtil.serialize(test)
      println "String:\n${xmlString}"
    return xmlString
 
 }
+//InventoryUpdate
