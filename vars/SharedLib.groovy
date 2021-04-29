@@ -62,6 +62,10 @@ def call (Map config){
             ).trim()
             println(response)
         }
+       
+        config.approvers.each{
+    key, value -> print key;
+}
 }
 }
 
