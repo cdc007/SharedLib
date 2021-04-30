@@ -63,7 +63,7 @@ def call (Map config){
             println(response)
         }
        println("/////////////////////////")
-        println(config.approvers.name)
+        println(config.approvers)
            
               println("/////////////////////////")
 
