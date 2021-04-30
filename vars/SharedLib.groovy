@@ -62,6 +62,16 @@ def call (Map config){
             ).trim()
             println(response)
         }
+       
+     listvalue=  new XmlSlurper().parseText(response)
+                .'**'
+                .findAll { it.name() == 'code' }
+                .each { node ->
+                    list.addAll(node.text())
+                }
+       
+       println(listvalue +" ssssssssssssssssssssssssssssssssssssssssssssssssssssss")
+       
        println("/////////////////////////")
         println(config.approvers)
        
@@ -80,10 +90,10 @@ def call (Map config){
         }
        
        println(map.name)
-           
+            
               println("/////////////////////////")
        
-   
+      
 
 }
 }
