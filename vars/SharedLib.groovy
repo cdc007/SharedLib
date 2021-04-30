@@ -135,7 +135,7 @@ xmlString = xmlUtil.serialize(test)
 }
 
 @NonCPS
-test1(String file) {
+List test1(String file) {
     def list = []
     rpf1=new File(rpf).text
         println(rpf1)
