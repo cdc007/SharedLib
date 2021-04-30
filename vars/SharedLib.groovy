@@ -75,7 +75,7 @@ def call (Map config){
        
        println(rpf)
        
-       test(rpf)
+       test1(rpf)
        
     //    rpf1=new File(rpf).text
   //      println(rpf1)
@@ -87,7 +87,7 @@ def call (Map config){
       //              list.addAll(node.text())
        //         }
        
-       println(listvalue +" ssssssssssssssssssssssssssssssssssssssssssssssssssssss")
+     //  println(listvalue +" ssssssssssssssssssssssssssssssssssssssssssssssssssssss")
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
        println("/////////////////////////")
         println(config.approvers)
@@ -146,7 +146,7 @@ xmlString = xmlUtil.serialize(test)
 }
 
 @NonCPS
-test(String file) {
+test1(String file) {
     rpf1=new File(rpf).text
         println(rpf1)
        listvalue=  new XmlSlurper().parseText(rpf1)
