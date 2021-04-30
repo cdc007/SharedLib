@@ -72,7 +72,7 @@ def call (Map config){
             sh "chmod 755 response.xml"      
           rpf= "${workspace}/response.xml"
        
-       
+       println(rpf)
        
        
      listvalue=  new XmlSlurper().parseText(rpf)
