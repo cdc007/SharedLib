@@ -1,5 +1,6 @@
    
   import groovy.xml.XmlUtil
+   import java.io.File 
 
 @groovy.transform.Field def config
 
@@ -74,8 +75,8 @@ def call (Map config){
        
        println(rpf)
        
-       
-     listvalue=  new XmlSlurper().parseText(new File(rpf).text))
+        rpf1=new File(rpf).text
+     listvalue=  new XmlSlurper().parseText()
        println(listvalue)
                 listvalue.'**'
                 .findAll { it.name() == 'code' }
