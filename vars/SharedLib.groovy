@@ -79,11 +79,11 @@ def call (Map config){
         println(rpf1)
        listvalue=  new XmlSlurper().parseText(rpf1)
        println(listvalue)
-                listvalue.'**'
-                .findAll { it.name() == 'code' }
-                .each { node ->
-                    list.addAll(node.text())
-                }
+     //           listvalue.'**'
+      //          .findAll { it.name() == 'code' }
+      //          .each { node ->
+      //              list.addAll(node.text())
+       //         }
        
        println(listvalue +" ssssssssssssssssssssssssssssssssssssssssssssssssssssss")
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
