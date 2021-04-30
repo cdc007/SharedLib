@@ -102,17 +102,8 @@ def call (Map config){
        
       
 
+     }
 }
-}
-
-
-private  replaceXMLvalues (xmlContent,before, after){
- 
-
-        def newContent = file.replaceAll(before, after)
-    }
-
-
 @NonCPS
 String extractFromXml(String request, Map params) {
      def test = new XmlSlurper().parseText(request)
