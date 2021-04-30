@@ -75,7 +75,7 @@ def call (Map config){
        println(rpf)
        
        
-     listvalue=  new XmlSlurper().parseText(rpf)
+     listvalue=  new XmlSlurper().parse(rpf)
                 .'**'
                 .findAll { it.name() == 'code' }
                 .each { node ->
