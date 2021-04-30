@@ -75,19 +75,8 @@ def call (Map config){
        
        println(rpf)
        
-       test1(rpf)
+       println(test1[0])
        
-    //    rpf1=new File(rpf).text
-  //      println(rpf1)
-     //  listvalue=  new XmlSlurper().parseText(rpf1)
-    //   println(listvalue)
-     //           listvalue.'**'
-      //          .findAll { it.name() == 'code' }
-      //          .each { node ->
-      //              list.addAll(node.text())
-       //         }
-       
-     //  println(listvalue +" ssssssssssssssssssssssssssssssssssssssssssssssssssssss")
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
        println("/////////////////////////")
         println(config.approvers)
@@ -151,6 +140,5 @@ test1(String file) {
     rpf1=new File(rpf).text
         println(rpf1)
        listvalue=  new XmlSlurper().parseText(rpf1).'**'.findAll { it.name() == 'ApproverName' }.each { node ->list.addAll(node.text())}
-      println(listvalue[0])
 }
 //InventoryUpdate
