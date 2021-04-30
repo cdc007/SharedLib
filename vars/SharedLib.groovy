@@ -75,10 +75,12 @@ def call (Map config){
        
        println(rpf)
        
-        rpf1=new File(rpf).text
-        println(rpf1)
-       listvalue=  new XmlSlurper().parseText(rpf1)
-       println(listvalue)
+       test(rpf)
+       
+    //    rpf1=new File(rpf).text
+  //      println(rpf1)
+     //  listvalue=  new XmlSlurper().parseText(rpf1)
+    //   println(listvalue)
      //           listvalue.'**'
       //          .findAll { it.name() == 'code' }
       //          .each { node ->
@@ -142,4 +144,12 @@ xmlString = xmlUtil.serialize(test)
    return xmlString
 
 }
+
+@NonCPS
+ test(String file) }
+    rpf1=new File(rpf).text
+        println(rpf1)
+       listvalue=  new XmlSlurper().parseText(rpf1)
+       println(listvalue)
+{
 //InventoryUpdate
