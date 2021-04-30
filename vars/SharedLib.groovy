@@ -64,6 +64,9 @@ def call (Map config){
         }
        println("/////////////////////////")
         println(config.approvers)
+       
+       Map map1=config.approvers
+       println(map1.name)
            
               println("/////////////////////////")
 
