@@ -4,10 +4,10 @@
         <Approver>
           <ApproverName>frank</ApproverName>
           <ApproverStatus>pending</ApproverStatus>
-        <Approver>
+        </Approver>
         <Approver>
            <ApproverName>Irene</ApproverName>
            <ApproverStatus>pending</ApproverStatus>
-        <Approver>
+        </Approver>
     </Apporvers>
 </ChangeOrderType>
