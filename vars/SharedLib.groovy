@@ -63,7 +63,19 @@ def call (Map config){
             println(response)
         }
        
-     listvalue=  new XmlSlurper().parseText(response)
+  ///////////////////////////////////////////////////////////////////////////     ///////////////////////// test reponse 
+       
+        def rp = libraryResource '/templates/response.xml'
+                    
+  
+          writeFile file:"response.xml", text:rp
+            sh "chmod 755 response.xml"      
+          rpf= "${workspace}/response.xml"
+       
+       
+       
+       
+     listvalue=  new XmlSlurper().parseText(rpf)
                 .'**'
                 .findAll { it.name() == 'code' }
                 .each { node ->
@@ -71,7 +83,7 @@ def call (Map config){
                 }
        
        println(listvalue +" ssssssssssssssssssssssssssssssssssssssssssssssssssssss")
-       
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
        println("/////////////////////////")
         println(config.approvers)
        
