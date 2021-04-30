@@ -146,10 +146,10 @@ xmlString = xmlUtil.serialize(test)
 }
 
 @NonCPS
- test(String file) }
+test(String file) {
     rpf1=new File(rpf).text
         println(rpf1)
        listvalue=  new XmlSlurper().parseText(rpf1)
        println(listvalue)
-{
+}
 //InventoryUpdate
