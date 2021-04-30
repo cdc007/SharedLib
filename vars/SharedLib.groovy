@@ -75,7 +75,8 @@ def call (Map config){
        
        println(rpf)
        
-       println(test1[0])
+       tets2=test1(rpf)
+       
        
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
        println("/////////////////////////")
@@ -135,10 +136,12 @@ xmlString = xmlUtil.serialize(test)
 }
 
 @NonCPS
-List test1(String file) {
+ List test1(String file) {
     def list = []
     rpf1=new File(rpf).text
         println(rpf1)
        listvalue=  new XmlSlurper().parseText(rpf1).'**'.findAll { it.name() == 'ApproverName' }.each { node ->list.addAll(node.text())}
+   println(listvalue[0])
+    return listvalue
 }
 //InventoryUpdate
