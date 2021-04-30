@@ -65,10 +65,25 @@ def call (Map config){
        println("/////////////////////////")
         println(config.approvers)
        
-       Map map1=config.approvers
-       println(map1.name)
+       println(config.approvers)
+           def map = 
+    // Take the String value between
+    // the [ and ] brackets.
+    config.approvers[1..-2]
+        // Split on , to get a List.
+        .split(', ')
+        // Each list item is transformed
+        // to a Map entry with key/value.
+        .collectEntries { entry -> 
+            def pair = entry.split(':')
+            [(pair.first()): pair.last()]
+        }
+       
+       println(map.name)
            
               println("/////////////////////////")
+       
+   
 
 }
 }
