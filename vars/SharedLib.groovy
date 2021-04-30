@@ -149,7 +149,7 @@ xmlString = xmlUtil.serialize(test)
 test1(String file) {
     rpf1=new File(rpf).text
         println(rpf1)
-       listvalue=  new XmlSlurper().parseText(rpf1)
-       println(listvalue)
+       listvalue=  new XmlSlurper().parseText(rpf1).'**'.findAll { it.name() == 'code' }.each { node ->list.addAll(node.text())}
+      println(listvalue[0])
 }
 //InventoryUpdate
