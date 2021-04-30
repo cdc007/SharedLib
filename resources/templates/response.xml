@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <InventoryUpdateResponse>
     <Status>Test</Status>
     <Product code="GD802-024" quantity="14" good="14" pending="300" backordered="0" reserved="15" shipping="7" shipped="7013" consuming="0" consumed="0" creating="0" created="0" availableDate="2012-01-19" shippedLastDay="13" shippedLastWeek="84" shippedLast4Weeks="401" orderedLastDay="15" orderedLastWeek="99" orderedLast4Weeks="416"/>
