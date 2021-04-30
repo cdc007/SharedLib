@@ -63,8 +63,7 @@ def call (Map config){
             println(response)
         }
        println("/////////////////////////")
-        config.approvers.each{
-    key, value -> print key;
+        println(config.approvers.name)
            
               println("/////////////////////////")
 }
