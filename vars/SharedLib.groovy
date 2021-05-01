@@ -84,7 +84,7 @@ def call (Map config){
     //   map1= "[group1:frank,group2:irene]"
    //      map1= stringtoMap(app)
        
-       map =config.approvers[1..-2]
+       map1 =config.approvers[1..-2]
         // Split on , to get a List.
         .split(', ')
         // Each list item is transformed
