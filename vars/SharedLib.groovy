@@ -96,9 +96,10 @@ def call (Map config){
        // loop 2 times
        
        for(i=0;i<status.size();i++){
- //        def map2 = stringtoMap(app)
+ //        def map2 = stringtoMap(app)  
+      //    map1= stringtoMap(app)
           println status[i] 
-       println map.get(status[i])
+       println map.get(status[i].replaceAll("\\s",""))
          
        }
       
