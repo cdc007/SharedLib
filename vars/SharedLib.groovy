@@ -81,20 +81,9 @@ def call (Map config){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
        println("/////////////////////////")
         println(config.approvers)
-       
-       println(config.approvers)
-           def map = 
-    // Take the String value between
-    // the [ and ] brackets.
-    config.approvers[1..-2]
-        // Split on , to get a List.
-        .split(', ')
-        // Each list item is transformed
-        // to a Map entry with key/value.
-        .collectEntries { entry -> 
-            def pair = entry.split(':')
-            [(pair.first()): pair.last()]
-        }
+      
+           def map = stringtoMap(config.approvers)
+ 
        
        println(map.name)
             
@@ -136,3 +125,19 @@ xmlString = xmlUtil.serialize(test)
     return listvalue
 }
 
+@NonCPS
+
+Map stringtoMap(String param){
+   // Take the String value between
+    // the [ and ] brackets.
+  return  param[1..-2]
+        // Split on , to get a List.
+        .split(', ')
+        // Each list item is transformed
+        // to a Map entry with key/value.
+        .collectEntries { entry -> 
+            def pair = entry.split(':')
+            [(pair.first()): pair.last()]
+        }
+   
+}
