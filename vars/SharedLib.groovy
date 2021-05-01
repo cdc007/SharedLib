@@ -92,8 +92,8 @@ def call (Map config){
        
        for(i=0;i<status.size();i++){
           println i
-         ss=status[i]
-         println map."${ss}"
+        // ss=status[i]
+         println map."${status[i]}"
          
        }
       
