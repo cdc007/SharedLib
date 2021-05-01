@@ -92,7 +92,7 @@ def call (Map config){
        
        for(i=0;i<status.size();i++){
           println i
-          pirnt status[i]
+          println status[i]
      //     println map.${status[i]}
        }
       
