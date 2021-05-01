@@ -117,11 +117,11 @@ xmlString = xmlUtil.serialize(test)
 
 @NonCPS
  List test1(String file) {
-    def list = []
+   // def list = []
    def rpf1=new File(rpf).text
         println(rpf1)
    def  listvalue=  new XmlSlurper().parseText(rpf1)
-   def  listApprovers = listvalue.'**'.findAll { it.name() == 'ApproverName' }
+   def  listApprovers = listvalue.'**'.findAll { it -> it.name() == 'ApproverName' }
     
    // listApprovers.each { node ->list.addAll(node.text())}
   
