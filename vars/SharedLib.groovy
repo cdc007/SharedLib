@@ -149,7 +149,7 @@ Map stringtoMap(String param){
         // to a Map entry with key/value.
         .collectEntries { entry -> 
             def pair = entry.split(':')
-            [(pair.first()): pair.last()]
+            [pair.first().toString: pair.last().toString]
         }
    
 }
