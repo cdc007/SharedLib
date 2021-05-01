@@ -82,9 +82,9 @@ def call (Map config){
         println(config.approvers)
       
            def map = stringtoMap(config.approvers)
- 
+ println map.group1
        
-            println(map.name)
+
             
               println("/////////////////////////")
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
