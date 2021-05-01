@@ -83,8 +83,8 @@ def call (Map config){
       
            def map = stringtoMap(config.approvers)
        println "test map/////////"
-        println map.get(group1) +" should be Irene"
-       println map.get(group2) + " should be Frank"
+        println map.get(group1) 
+       println map.get(group2)
           println "test map///////////"
 
             
@@ -93,8 +93,8 @@ def call (Map config){
        // loop 2 times
        
        for(i=0;i<status.size();i++){
-          println i
-           println status[i] + " list value"
+      
+          println status[i] 
          println map.get(status[i])
          
        }
