@@ -80,22 +80,14 @@ def call (Map config){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
        println("/////////////////////////")
         println(config.approvers)
-        app="[group1:Irene,group2:frank]"
-    //   map1= "[group1:frank,group2:irene]"
-   //      map1= stringtoMap(app)
+        app="[group1:frank,group2:irene]"
+
+      map1= stringtoMap(app)
        
-       map1 =config.approvers[1..-2]
-        // Split on , to get a List.
-        .split(', ')
-        // Each list item is transformed
-        // to a Map entry with key/value.
-        .collectEntries { entry -> 
-            def pair = entry.split(':')
-            [(pair.first()): pair.last()]
-        }
+      
        println "test map/////////"
-        println ( map1.group1 +"//// group1 irene")
-       println (map1.group2 +"//// group2 frank")
+        println ( map1.group1 +"//// group1 frank")
+       println (map1.group2 +"//// group2 irene")
           println "test map///////////"
 
             
