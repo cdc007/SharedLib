@@ -116,7 +116,7 @@ xmlString = xmlUtil.serialize(test)
 }
 
 @NonCPS
- List test1(String file) {
+def  test1(String file) {
    // def list = []
    def rpf1=new File(rpf).text
         println(rpf1)
@@ -125,7 +125,7 @@ xmlString = xmlUtil.serialize(test)
     
    // listApprovers.each { node ->list.addAll(node.text())}
   
-    return listApprovers
+  //  return listApprovers
 }
 
 @NonCPS
