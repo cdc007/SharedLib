@@ -82,8 +82,8 @@ def call (Map config){
         println(config.approvers)
         app="[group1:frank,group2:irene]"
 
-    def  map= stringtoMap(app)
-       
+     map= stringtoMap(app)
+       println(map.getClass())
       
        println "test map/////////"
         println ( map.group1 +"//// group1 frank")
@@ -142,17 +142,11 @@ xmlString = xmlUtil.serialize(test)
 
 @NonCPS
 
- stringtoMap(String param){
+Map stringtoMap(String param){
    // Take the String value between
     // the [ and ] brackets.
-    param[1..-2]
-        // Split on , to get a List.
-        .split(', ')
-        // Each list item is transformed
-        // to a Map entry with key/value.
-        .collectEntries { entry -> 
-            def pair = entry.split(':')
-            [(pair.first()): pair.last()]
-        }
-   
+    println param
+   def map= param[1..-2].split(",").collectEntries {entry ->   def pair = entry.split(':')
+    [(pair.first()):pair.last()]  }
+   return map
 }
