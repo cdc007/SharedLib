@@ -91,7 +91,9 @@ def call (Map config){
        // loop 2 times
        
        for(i=0;i<status.size();i++){
-          println map.${status[i]}
+          println i
+          pirnt status[i]
+     //     println map.${status[i]}
        }
       
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
