@@ -98,7 +98,7 @@ def call (Map config){
        for(i=0;i<status.size();i++){
  //        def map2 = stringtoMap(app)
           println status[i] 
-    //     println map2.get(status[i])
+       println map.get(status[i])
          
        }
       
