@@ -77,7 +77,7 @@ def call (Map config){
        
       tets2=test1(rpf)
        
-    //  println(tets2[1])
+      println(tets2[1])
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
        println("/////////////////////////")
         println(config.approvers)
@@ -85,7 +85,7 @@ def call (Map config){
            def map = stringtoMap(config.approvers)
  
        
-       println(map.name)
+            println(map.name)
             
               println("/////////////////////////")
        
@@ -120,9 +120,12 @@ xmlString = xmlUtil.serialize(test)
     def list = []
    def rpf1=new File(rpf).text
         println(rpf1)
-    def  listvalue=  new XmlSlurper().parseText(rpf1).'**'.findAll { it.name() == 'ApproverName' }.each { node ->list.addAll(node.text())}
-   println(listvalue[0])
-    return listvalue
+   def  listvalue=  new XmlSlurper().parseText(rpf1)
+   def  listApprovers = listvalue.'**'.findAll { it.name() == 'ApproverName' }
+    
+   // listApprovers.each { node ->list.addAll(node.text())}
+  
+    return listApprovers
 }
 
 @NonCPS
