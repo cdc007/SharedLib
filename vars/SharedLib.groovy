@@ -76,8 +76,7 @@ def call (Map config){
        println(rpf)
        
       tets2=test1(rpf)
-       
-      println(tets2[1])
+      println tets2[1]
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
        println("/////////////////////////")
         println(config.approvers)
@@ -118,8 +117,7 @@ xmlString = xmlUtil.serialize(test)
 @NonCPS
   test1(String file) {
    // def list = []
-   def rpf1=new File(rpf)  //.text
-        println(rpf1)
+   def rpf1=new File(rpf).text
    def  listvalue=  new XmlSlurper().parseText(rpf1).'**'.findAll { it -> it.name() == 'ApproverName' }
    //def  listApprovers = listvalue
     
