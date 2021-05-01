@@ -82,9 +82,10 @@ def call (Map config){
         println(config.approvers)
       
            def map = stringtoMap(config.approvers)
- println map.group1 
+       println "test map/////////"
+        println map.group1 
        println map.group2
-       
+          println "test map///////////"
 
             
               println("/////////////////////////")
@@ -93,8 +94,8 @@ def call (Map config){
        
        for(i=0;i<status.size();i++){
           println i
-           println status[i]
-         println map.get("${status[i]}")
+           println status[i] + " list value"
+         println map.get(status[i])
          
        }
       
