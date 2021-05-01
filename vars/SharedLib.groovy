@@ -81,10 +81,10 @@ def call (Map config){
        println("/////////////////////////")
         println(config.approvers)
       
-           def map = stringtoMap(config.approvers)
+         map1= stringtoMap(config.approvers)
        println "test map/////////"
-        println map.group1 
-       println map.group2
+        println ( map1.group1 +"//// group1 irene")
+       println (map1.group2 +"//// group1 frank")
           println "test map///////////"
 
             
@@ -139,10 +139,10 @@ xmlString = xmlUtil.serialize(test)
 
 @NonCPS
 
-Map stringtoMap(String param){
+ stringtoMap(String param){
    // Take the String value between
     // the [ and ] brackets.
-  return  param[1..-2]
+    param[1..-2]
         // Split on , to get a List.
         .split(', ')
         // Each list item is transformed
