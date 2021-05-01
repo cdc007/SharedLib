@@ -75,9 +75,9 @@ def call (Map config){
        
        println(rpf)
        
-       tets2=test1(rpf)
+ //      tets2=test1(rpf)
        
-       println(tets2[1])
+   //    println(tets2[1])
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
        println("/////////////////////////")
         println(config.approvers)
