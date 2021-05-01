@@ -2,11 +2,11 @@
 <ChangeOrderType>
     <Approvers>
         <Approver>
-          <ApproverName>frank</ApproverName>
+          <ApproverName>group1</ApproverName>
           <ApproverStatus>pending</ApproverStatus>
         </Approver>
         <Approver>
-           <ApproverName>Irene</ApproverName>
+           <ApproverName>group2</ApproverName>
            <ApproverStatus>pending</ApproverStatus>
         </Approver>
     </Approvers>
