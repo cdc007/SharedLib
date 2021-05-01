@@ -83,8 +83,8 @@ def call (Map config){
       
            def map = stringtoMap(config.approvers)
        println "test map/////////"
-        println map.get(group1) 
-       println map.get(group2)
+        println map.group1 
+       println map.group2
           println "test map///////////"
 
             
@@ -93,9 +93,9 @@ def call (Map config){
        // loop 2 times
        
        for(i=0;i<status.size();i++){
-      
+         def map2 = stringtoMap(config.approvers)
           println status[i] 
-         println map.get(status[i])
+         println map2.get(status[i])
          
        }
       
@@ -149,7 +149,7 @@ Map stringtoMap(String param){
         // to a Map entry with key/value.
         .collectEntries { entry -> 
             def pair = entry.split(':')
-            [pair.first().toString: pair.last().toString]
+            [(pair.first()): pair.last()]
         }
    
 }
