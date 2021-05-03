@@ -132,7 +132,7 @@ xmlString = xmlUtil.serialize(test)
 @NonCPS
   getApprovalStatus(String file) {
    // def list = []
-   rpf1=new File(rpf).text
+   rpf1=new File(file).text
      listvalue=  new XmlSlurper().parseText(rpf1).'**'.findAll { it -> it.name() == 'ApproverName' }.toString()
      listvalue[1..-2].split(",").collect {it}
    //def  listApprovers = listvalue
